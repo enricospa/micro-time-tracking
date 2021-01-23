@@ -1,0 +1,31 @@
+{
+    "name": "enricospa/micro-time-tracker",
+    "description": "A PHP micro library for time tracking",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "enricospa",
+            "email": "spa.enrico@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Enricospa\\MicrotimeTracker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Enricospa\\MicrotimeTracker\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": ">=8.0",
+        "pear/console_table": "^1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "symfony/var-dumper": "^5.2"
+    }
+}
