@@ -1,5 +1,5 @@
 {
-    "name": "enricospa/micro-time-tracker",
+    "name": "enricospa/microtime-tracker",
     "description": "A PHP micro library for time tracking",
     "type": "library",
     "license": "MIT",

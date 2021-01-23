@@ -25,14 +25,19 @@ Install using Composer
 Code example:
    ```php
    use Enricospa\MicrotimeTracker\Tracker;
+   use Enricospa\MicrotimeTracker\TimestampHolder;
 
-   $tracker = new Tracker();
+   $tracker = new Tracker(new TimestampHolder);
+   $tracker->start('Start tracking');
 
-   // Some code to measure here
+   // Sleep for a while
+   usleep(2000000);
 
-   $tracker->snap('Some code executed!');
+   $tracker->snap('Slept for a while');
 
-   echo $tracker->reportHtml();
+   echo "<pre>";
+   echo $tracker->reportConsole();
+   echo "</pre>";
    ```
 
 _More examples coming..._
