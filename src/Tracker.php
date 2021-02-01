@@ -15,28 +15,32 @@ class Tracker
     private $snaps;
 
     /**
+     * Empty timestamp holder instance
+     *
+     * @var TimestampHolder
+     */
+    private $holder;
+
+    /**
      * Init the tracker
      *
      * @param TimestampHolder $holder
      */
     public function __construct(TimestampHolder $holder)
     {
-        $this->snaps = $holder;
+        // Init the tracker
+        $this->holder = $holder;
+        $this->reset();
     }
 
     /**
-     * Start the timer
+     * Reset the tracker
      *
-     * @param string $description
      * @return void
      */
-    public function start($description = '') : void
+    public function reset() : void
     {
-        // Reset timestamps
-        // $this->snaps->reset();
-
-        // Start time
-        $this->snap($description);
+        $this->snaps = $this->holder;
     }
 
     /**
@@ -75,17 +79,12 @@ class Tracker
     }
 
     /**
-     * Report time snaps in html format
+     * Display time in human readable format
      *
+     * @param float $microseconds
+     * @param boolean $show_um
      * @return string
      */
-    // public function reportHtml() : string
-    // {
-    //     dump($this->snaps);
-
-    //     return '';
-    // }
-
     private function formatTime($microseconds, $show_um = false) : string
     {
         $micro = sprintf("%06d", ($microseconds - floor($microseconds)) * 1000000);
@@ -124,6 +123,6 @@ class Tracker
 
         $time = sprintf($format, $time['microseconds'], $time['seconds'], $time['minutes'], $time['hours'], $um);
 
-        return (floatval($time) == 0) ? 0 : rtrim($time, '0');
+        return (floatval($time) == 0) ? '0' : rtrim($time, '0');
     }
 }

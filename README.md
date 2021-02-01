@@ -27,8 +27,11 @@ Code example:
    use Enricospa\MicrotimeTracker\Tracker;
    use Enricospa\MicrotimeTracker\TimestampHolder;
 
+   // Init the tracker
    $tracker = new Tracker(new TimestampHolder);
-   $tracker->start('Start tracking');
+
+   // First snap starts the tracker
+   $tracker->snap('Start tracking');
 
    // Sleep for a while
    usleep(2000000);

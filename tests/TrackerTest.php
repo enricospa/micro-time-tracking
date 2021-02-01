@@ -8,24 +8,27 @@ use Enricospa\MicrotimeTracker\Tracker;
 
 final class TrackerTest extends TestCase
 {
-    public function testReportHtmlProducesHtml()
+    // TODO: complete the test
+    public function testTimeCanBeTracked()
     {
-        // $tracker = new Tracker(new TimestampHolder);
+        // $this->expectOutputString('');
 
-        // $tracker->start('Start tracking');
+        // Init the tracker
+        $tracker = new Tracker(new TimestampHolder);
 
-        // // Sleep for a while
-        // usleep(2000000);
+        // First snap starts the tracker
+        $tracker->snap('Start tracking');
 
-        // $tracker->snap('Sleeped for a while');
+        // Sleep for a while
+        usleep(2000000);
 
-        // // Sleep for a while
-        // usleep(20000);
+        $tracker->snap('Slept for a while');
 
-        // $tracker->snap('Sleeped a bit again');
+        // Sleep for a while
+        usleep(20000);
 
-        // echo "<pre>";
-        // echo $tracker->reportConsole();
-        // echo "</pre>";
+        $tracker->snap('Slept again');
+
+        echo $tracker->reportConsole();
     }
 }
