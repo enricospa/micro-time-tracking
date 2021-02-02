@@ -17,7 +17,7 @@ To use this library in your project simply require it with Composer.
 
 Install using Composer
    ```sh
-   composer require enricospa\microtime-tracker
+   composer require enricospa/microtime-tracker
    ```
 
 ### Usage
